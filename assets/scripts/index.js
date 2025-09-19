@@ -11,7 +11,7 @@ function card(pelicula) {
     return `<div class="flex flex-col border-4 border-double border-black p-[10px] rounded-xl gap-[10px] w-[90%] md:w-[45%] 2xl:w-[30%] text-2xl">
                 <img class="w-[100%] border-6 border-double border-black 2xl:h-[300px]" src="${pelicula.image}" alt="">
                 <h2 class="text-4xl text-center font-serif">${pelicula.title}</h2>
-                <p class="italic truncate">${pelicula.genres}</p>
+                <p class="italic truncate">${pelicula.tagline}</p>
                 <p class="font-mono">description: ${pelicula.overview} </p>
             </div>`
 }
