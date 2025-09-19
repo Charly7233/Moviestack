@@ -5,36 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="shortcut icon" href="./assets/imagenes/Moviestack_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Moviestack</title>
   </head>
   <body>
     <div class="flex flex-col min-h-screen w-full">
-      <header class="bg-zinc-600">
+      <header class="bg-zinc-600 flex items-center">
         <div>
-          <img class="h-[100px] flex" src="./assets/imagenes/Moviestack_isotipo.png" alt="Logo de moviestack">
+          <img class="h-[100px]" src="./assets/imagenes/Moviestack_isotipo.png" alt="Logo de moviestack">
         </div>
-        <div>
+        <div class="grow">
           <h1>MOVIESTACK</h1>
         </div>
-        <nav class="flex gap-[20px]">
-          <nav>
+          <nav class="flex ">
             <a href="./index.html">Home</a>
             <a href="#">Movies</a>
             <a href="./favs.html">Favs</a>
           </nav>
-        </nav>
       </header>
-      <main class="bg-zinc-800 text-white">
+      <main class="bg-zinc-800 text-white grow flex flex-col gap-[10px]">
         <div>
             <h2>MOVIES</h2>
         </div>
-        <div>
-            <img src="" alt="">
-            <h5>tittle</h5>
-            <p>tagline</p>
-            <p>description, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic reiciendis culpa alias laudantium, sapiente sed eos facilis dolorem est natus obcaecati totam! Dolorem eveniet doloremque quod laboriosam cum itaque consequuntur!</p>
-
-        </div>
+        <article id="contenedor" class="p-5 flex flex-wrap gap-5 md:justify-center">
+         
+        </article>
       </main>
       <footer class="bg-zinc-600">
         <div>
@@ -42,5 +37,7 @@
         </div>
       </footer>
     </div>
+    <script src="./assets/data/datamovies.js"></script>
+    <script src="./assets/scripts/index.js"></script>
     </body>
     </html>
