@@ -1,10 +1,3 @@
-/*<div class="flex flex-col border-4 border-double border-black p-[10px] rounded-xl">
-            <img class="w-[100%]" src="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/cinefilia/que-fue-de-el-reparto-de-el-club-de-los-poetas-muertos/00/14815336-1-esl-ES/00.jpg" alt="">
-            <h2 class="text-4xl">tittle</h2>
-            <p class="italic ">tagline</p>
-            <p>description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic reiciendis culpa alias laudantium, sapiente sed eos facilis dolorem est natus obcaecati totam! Dolorem eveniet doloremque quod laboriosam cum itaque consequuntur!</p>
-        </div>*/
-
 const cont = document.getElementById("contenedor")
 
 function card(pelicula) {
@@ -19,10 +12,67 @@ function card(pelicula) {
 cont.innerHTML = card (movies [0])
 
 function creationcard(peliculas, movie) {
-    let cards = ""
+    if (!peliculas.length) {
+        movie.innerHTML = `<p>That movie is not in our repertory</p>`
+    } else {
+        let cards = ""
     for (const pelis of peliculas) {
         cards += card (pelis)
     }
     movie.innerHTML = cards
+    }
 }
 creationcard (movies, cont)
+
+
+const busqueda = document.getElementById("busquedapeliculas")
+
+
+busqueda.addEventListener(`input`,() => {
+    const busq = busqueda.value.trim()
+    const peliculasfilt = filtropeliculas(movies,busq)
+    const peliculasyafiltradas = filtropeliculasgenero(peliculasfilt,filtrogeneros())
+    creationcard (peliculasyafiltradas, cont)
+
+})
+
+function filtropeliculas(peliculas,titulo) {
+    return peliculas.filter((pelicula) => {return pelicula.title.toLowerCase().startsWith(titulo.toLowerCase())})
+}
+
+/*detectar el evento select
+filtrar por genero
+mostrar peliculas condicho genero incluido*/
+
+
+const seleccionado = document.getElementById("selector")
+
+seleccionado.addEventListener("input", (event) =>{
+    const busq = busqueda.value.trim()
+    const peliculasfilt = filtropeliculas(movies,busq)
+    const peliculasyafiltradas = filtropeliculasgenero(peliculasfilt,filtrogeneros())
+    creationcard (peliculasyafiltradas, cont)
+
+})
+
+const generos = movies.map((pelicula)=>{
+    return pelicula.genres
+})
+const uniquegenres = new Set(generos.flat())
+
+uniquegenres.forEach((genero) => {
+    seleccionado.innerHTML += `<option value="${genero}">${genero}</option>`
+})
+
+function filtropeliculasgenero(peliculas,genero) {
+    if (genero == "none") {
+        return peliculas
+    }else {
+        return peliculas.filter((pelicula) => {return pelicula.genres.some((gen)=> gen == genero)})
+    }
+}
+
+function filtrogeneros() {
+    const asd = document.getElementById("selector")
+    return asd.value
+}

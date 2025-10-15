@@ -17,19 +17,29 @@
         <div class="grow p-3">
           <h1 class="text-4xl font-serif text-shadow-lg text-shadow-red-500 font-bold">MOVIESTACK</h1>
         </div>
-          <nav class="flex gap-2 text-xl">
+          <nav class="flex gap-2 text-xl xl: ">
             <a class="p-2" href="./index.html">Home</a>
             <a class="p-2" href="#">Movies</a>
             <a class="p-2" href="./favs.html">Favs</a>
           </nav>
       </header>
       <main class="bg-zinc-800 text-white grow flex flex-col gap-[10px] ">
-        <div>
-            <h2 class="text-3xl text-center p-2 font-[Franklin Gothic Medium]">MOVIES</h2>
+        <div class="flex justify-center pt-5">
+          <input id="busquedapeliculas" type="text" class="flex rounded-full border-red-600 border-3 w-3/4 xl:w-xl items-center" placeholder=" EJ:Uncharted">
         </div>
-        <article id="contenedor" class="p-5 flex flex-wrap gap-5 justify-center">
-         
-        </article>
+         <div class="flex justify-center bg-zinc-600 ">
+          <select class="p-5 flex flex-wrap gap-5 justify-center bg-zinc-600" name="seleccionar" id="selector">
+            <option value="none">Genres</option>
+          </select>
+        </div>
+        <div>
+            <h2 class="text-3xl text-center p-2 font-[Franklin Gothic Medium] text-shadow-lg text-shadow-red-500 font-bold underline underline-offset-8 text-white">MOVIES</h2>
+        </div>
+        <div>
+           <article id="contenedor" class="p-5 flex flex-wrap gap-5 justify-center">
+            
+          </article> 
+        </div>
       </main>
       <footer class="bg-zinc-600">
         <div>
