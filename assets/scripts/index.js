@@ -6,6 +6,7 @@ function card(pelicula) {
                 <h2 class="text-4xl text-center font-serif">${pelicula.title}</h2>
                 <p class="italic truncate">${pelicula.tagline}</p>
                 <p class="font-mono">description: ${pelicula.overview} </p>
+                <a href="./details.html?id=${pelicula.id}">Details</a>
             </div>`
 }
 
